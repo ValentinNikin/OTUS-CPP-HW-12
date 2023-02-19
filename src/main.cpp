@@ -25,7 +25,7 @@ bool reducerResultIsOk(const IReducer* reducer, const std::string& resFilePath) 
                         if (item.isFullWord) return true; // пропускаем, если префикс это полное слово
 
                         if (item.count == 1) {
-                            // проверяем, что найденный префикс не совпадает не с одним из "полных" слов
+                            // проверяем, что найденный префикс не совпадает ни с одним из "полных" слов
                             return !std::any_of(
                                     prefixes.cbegin(), prefixes.cend(),
                                     [prefix = item.prefix](const auto& innerItem) {
